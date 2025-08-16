@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/student")
 
-public class StudentController {
+    public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    @PostMapping("/add_student")
+    @PostMapping("/add")
     public String add(@RequestBody Student student){
         studentService.saveStudent(student);
         return "New Student is Added!";
